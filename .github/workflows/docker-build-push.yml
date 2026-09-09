@@ -19,15 +19,15 @@ jobs:
 
       - name: Verify release tag matches Dockerfile Alpine version
         run: |
-          ALPINE_VERSION=$(grep -m1 '^FROM alpine:' Dockerfile | sed -E 's/^FROM alpine:([^ ]+).*/\1/')
+          ALPINE_VERSION=$(grep -m1 '^ARG ALPINE_VERSION=' Dockerfile | sed -E 's/ARG ALPINE_VERSION="?([^"]*)"?/\1/')
           if [ -z "$ALPINE_VERSION" ]; then
-            echo "[ERROR] Could not determine Alpine version from Dockerfile"
+            echo "[ERROR] Could not determine ALPINE_VERSION from Dockerfile"
             exit 1
           fi
           TAG_VERSION="${{ steps.version.outputs.version }}"
           TAG_ALPINE_VERSION="${TAG_VERSION%-*}"
           if [ "$TAG_ALPINE_VERSION" != "$ALPINE_VERSION" ]; then
-            echo "[ERROR] Release tag ($TAG_VERSION) does not match FROM alpine:$ALPINE_VERSION in Dockerfile (expected tag <AlpineVersion>-<Revision>)"
+            echo "[ERROR] Release tag ($TAG_VERSION) does not match ARG ALPINE_VERSION=$ALPINE_VERSION in Dockerfile (expected tag <AlpineVersion>-<Revision>)"
             exit 1
           fi
 
