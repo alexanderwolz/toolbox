@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION="3.21.7"
+ARG ALPINE_VERSION="3.24.1"
 FROM alpine:${ALPINE_VERSION}
 
 LABEL maintainer="mail@alexanderwolz.de"
