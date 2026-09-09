@@ -1,7 +1,7 @@
 # Toolbox
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/alexanderwolz/toolbox)
-![GitHub](https://img.shields.io/badge/alpine-3.21.7-orange)
+![GitHub](https://img.shields.io/badge/alpine-3.24.1-orange)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexanderwolz/toolbox)
 ![GitHub all releases](https://img.shields.io/github/downloads/alexanderwolz/toolbox/total?color=informational)
 
@@ -27,7 +27,7 @@ Runs as a non-root user (`toolbox`, uid 1000) by default.
 
 ## 🐳 Dockerhub
 
-1. ```docker pull alexanderwolz/toolbox:3.21.7```
+1. ```docker pull alexanderwolz/toolbox:3.24.1```
 
 ## 📦 Use as base image
 
